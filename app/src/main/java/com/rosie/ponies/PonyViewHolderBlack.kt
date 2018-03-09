@@ -5,10 +5,11 @@ import android.view.View
 import android.widget.TextView
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class PonyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class PonyViewHolderBlack(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val ponyTextView: TextView
 
     init {
         ponyTextView = itemView.ponyname
+        itemView.setBackgroundColor(itemView.resources.getColor(R.color.dark))
     }
 }
