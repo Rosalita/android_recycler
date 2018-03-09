@@ -3,7 +3,6 @@ package com.rosie.ponies
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 
 class PonyAdaptor(private val ponylist: ArrayList<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -13,9 +12,9 @@ class PonyAdaptor(private val ponylist: ArrayList<String>) : RecyclerView.Adapte
         Log.d("TAG", "in onCreateViewHolder")
 
         return if (viewType == 0){
-            PonyViewHolderWhite(view)
+            PonyViewHolderLight(view)
         } else {
-            PonyViewHolderBlack(view)
+            PonyViewHolderDark(view)
         }
     }
 
@@ -36,8 +35,8 @@ class PonyAdaptor(private val ponylist: ArrayList<String>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val pony = ponylist[position]
         when(holder.itemViewType){
-            0 -> {(holder as PonyViewHolderWhite).ponyTextView.text = pony }
-            1 -> {(holder as PonyViewHolderBlack).ponyTextView.text = pony }
+            0 -> {(holder as PonyViewHolderLight).ponyTextView.text = pony }
+            1 -> {(holder as PonyViewHolderDark).ponyTextView.text = pony }
         }
 
         Log.d("TAG", "bind $position")
