@@ -2,8 +2,11 @@ package com.rosie.ponies
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.util.Log
+import android.widget.GridLayout
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -48,6 +51,33 @@ class MainActivity : AppCompatActivity() {
                     21 -> "Umbrella"
                     22 -> "Velvet"
                     23 -> "Waterfall"
+                    24 -> "Swift"
+                    25 -> "Crimson"
+                    26 -> "Silver"
+                    27 -> "Last"
+                    28 -> "Tiny"
+                    29 -> "Ruby"
+                    30 -> "Emerald"
+                    31 -> "Fluffy"
+                    32 -> "Dream"
+                    33 -> "Sky"
+                    34 -> "Lunar"
+                    35 -> "Celestial"
+                    36 -> "Magic"
+                    37 -> "Morning"
+                    38 -> "Mystic"
+                    39 -> "Dancing"
+                    40 -> "Marble"
+                    41 -> "Little"
+                    42 -> "Sugar"
+                    43 -> "Crystal"
+                    44 -> "Dew"
+                    45 -> "Misty"
+                    46 -> "Cherry"
+                    47 -> "Pumpkin"
+                    48 -> "Aqua"
+                    49 -> "Solar"
+                    50 -> "Strawberry"
                     else -> "Twilight"
                 }
 
@@ -76,20 +106,48 @@ class MainActivity : AppCompatActivity() {
                     21 -> "Umbra"
                     22 -> "Vision"
                     23 -> "Wave"
+                    24 -> "Breeze"
+                    25 -> "Summer"
+                    26 -> "Autumn"
+                    27 -> "Winter"
+                    28 -> "Spring"
+                    29 -> "Cake"
+                    30 -> "Cupcake"
+                    31 -> "Spice"
+                    32 -> "Candy"
+                    33 -> "Blossom"
+                    34 -> "Light"
+                    35 -> "Star"
+                    36 -> "Stream"
+                    37 -> "Song"
+                    38 -> "Dawn"
+                    39 -> "Fire"
+                    40 -> "Snowflake"
+                    41 -> "Rose"
+                    42 -> "Breeze"
+                    43 -> "Heart"
+                    44 -> "Princess"
+                    45 -> "Berry"
+                    46 -> "Swirl"
+                    47 -> "Twirl"
+                    48 -> "Shadow"
+                    49 -> "Spirit"
+                    50 -> "River"
                     else -> "Sparkle"
                 }
 
-        for (i in 0..19) {
+        for (i in 0..999) {
 
-            var num = rand(1, 23)
+            var num = rand(1, 50)
             var name1 = firstname(num)
-            num = rand(1, 23)
+            num = rand(1, 50)
             var name2 = lastname(num)
             ponylist.add(name1+" "+name2)
             Log.d("PonyList", ponylist.last())
          }
 
         recyclerview.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+       // recyclerview.layoutManager = GridLayoutManager(this, 3)
         recyclerview.adapter = PonyAdaptor(ponylist)
 
     }

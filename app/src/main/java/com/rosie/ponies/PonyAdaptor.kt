@@ -12,6 +12,7 @@ class PonyAdaptor(private val ponylist: ArrayList<String>) : RecyclerView.Adapte
         return PonyViewHolder(view)
     }
 
+
     override fun getItemCount(): Int {
         val size = ponylist.size
         Log.d("TAG", "count $size")
