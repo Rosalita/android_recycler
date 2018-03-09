@@ -2,8 +2,11 @@ package com.rosie.ponies
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import java.util.LinkedList
+import android.widget.LinearLayout
+import kotlinx.android.synthetic.main.activity_main.*
+
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val list = LinkedList<String>()
+        val ponylist = ArrayList<String>()
 
         val random = Random()
 
@@ -82,12 +85,14 @@ class MainActivity : AppCompatActivity() {
             var name1 = firstname(num)
             num = rand(1, 23)
             var name2 = lastname(num)
-            list.addLast(name1+" "+name2)
-            Log.d("PonyList", list.getLast())
+            ponylist.add(name1+" "+name2)
+            Log.d("PonyList", ponylist.last())
          }
 
-    }
+        recyclerview.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+        recyclerview.adapter = PonyAdaptor(ponylist)
 
+    }
 
 
 }
